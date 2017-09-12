@@ -15,3 +15,6 @@ after_failure:
 
 You'll now see lint error summary in travis log
 ![TravisOutput](screenshots/travisci_20170912.png)
+
+## LICENSE
+MIT

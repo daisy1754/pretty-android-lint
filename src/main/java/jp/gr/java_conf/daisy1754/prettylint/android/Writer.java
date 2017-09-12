@@ -22,7 +22,15 @@ public class Writer {
     for (Issue i : issues) {
       Location l = i.getLocation();
       StringBuilder builder = new StringBuilder();
-      builder.append("[")
+      builder
+          .append(l.getFilePath())
+          .append("(line: ")
+          .append(l.getLine())
+          .append(", column: ")
+          .append(l.getColumn())
+          .append(")")
+          .append(System.lineSeparator())
+          .append("[")
           .append(textHelper.setColor(
               i.getSeverity().toString(),
               i.getSeverity().equals(Issue.Severity.ERROR) ? Color.RED : Color.YELLOW))
@@ -31,12 +39,6 @@ public class Writer {
           .append(": ")
           .append(i.getMessage())
           .append(System.lineSeparator())
-          .append("line ")
-          .append(l.getLine())
-          .append(", column ")
-          .append(l.getColumn())
-          .append(" of ")
-          .append(l.getFilePath())
           .append(System.lineSeparator());
 
       try {
@@ -53,6 +55,8 @@ public class Writer {
       } catch (IOException e) {
         e.printStackTrace(out);
       }
+
+      builder.append(System.lineSeparator());
       out.println(builder.toString());
     }
     long numErrors =

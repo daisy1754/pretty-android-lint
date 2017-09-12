@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pretty-android-lint.iml" filepath="$PROJECT_DIR$/.idea/modules/pretty-android-lint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pretty-android-lint_main.iml" filepath="$PROJECT_DIR$/.idea/modules/pretty-android-lint_main.iml" group="pretty-android-lint" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pretty-android-lint_test.iml" filepath="$PROJECT_DIR$/.idea/modules/pretty-android-lint_test.iml" group="pretty-android-lint" />
+    </modules>
+  </component>
+</project>

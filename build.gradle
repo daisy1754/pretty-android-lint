@@ -5,7 +5,11 @@ apply plugin: 'java'
 apply plugin: 'application'
 
 mainClassName = 'jp.gr.java_conf.daisy1754.prettylint.android.Main'
-
+run {
+    if(System.getProperty("exec.args") != null) {
+        args System.getProperty("exec.args").split()
+    }
+}
 sourceCompatibility = 1.8
 
 repositories {

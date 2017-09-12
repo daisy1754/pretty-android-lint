@@ -4,8 +4,10 @@ import jp.gr.java_conf.daisy1754.prettylint.android.TextAppearanceHelper.Color;
 import jp.gr.java_conf.daisy1754.prettylint.android.data.Issue;
 import jp.gr.java_conf.daisy1754.prettylint.android.data.Location;
 
+import java.io.IOException;
 import java.io.PrintStream;
 import java.security.Security;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,6 +16,7 @@ import java.util.List;
 public class Writer {
 
   private final TextAppearanceHelper textHelper = new TextAppearanceHelper();
+  private final FileReader fileReader = new FileReader();
 
   public void writeOutput(List<Issue> issues, PrintStream out) {
     for (Issue i : issues) {
@@ -35,6 +38,21 @@ public class Writer {
           .append(" of ")
           .append(l.getFilePath())
           .append(System.lineSeparator());
+
+      try {
+        String line = fileReader.extractLine(l.getFilePath(), l.getLine());
+        builder.append(line).append(System.lineSeparator());
+        if (l.getColumn() > 0) {
+          char[] spaces = new char[l.getColumn() - 1];
+          Arrays.fill(spaces, ' ');
+          builder.append(spaces);
+        }
+        builder
+            .append(textHelper.setColor("^", Color.PURPLE))
+            .append(System.lineSeparator());
+      } catch (IOException e) {
+        e.printStackTrace(out);
+      }
       out.println(builder.toString());
     }
     long numErrors =

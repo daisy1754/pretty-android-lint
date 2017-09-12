@@ -5,6 +5,7 @@ import jp.gr.java_conf.daisy1754.prettylint.android.data.Issue;
 import jp.gr.java_conf.daisy1754.prettylint.android.data.Location;
 
 import java.io.PrintStream;
+import java.security.Security;
 import java.util.List;
 
 /**
@@ -36,5 +37,8 @@ public class Writer {
           .append(System.lineSeparator());
       out.println(builder.toString());
     }
+    long numErrors =
+        issues.stream().filter(i -> Issue.Severity.ERROR.equals(i.getSeverity())).count();
+    out.println(String.format("%d errors found", numErrors));
   }
 }

@@ -16,6 +16,22 @@ public class Issue {
     this.location = location;
   }
 
+  public String getType() {
+    return type;
+  }
+
+  public Severity getSeverity() {
+    return severity;
+  }
+
+  public String getMessage() {
+    return message;
+  }
+
+  public Location getLocation() {
+    return location;
+  }
+
   @Override
   public String toString() {
     return new StringBuilder()

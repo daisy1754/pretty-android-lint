@@ -1,6 +1,8 @@
 package jp.gr.java_conf.daisy1754.prettylint.android;
 
+import jp.gr.java_conf.daisy1754.prettylint.android.TextAppearanceHelper.Color;
 import jp.gr.java_conf.daisy1754.prettylint.android.data.Issue;
+import jp.gr.java_conf.daisy1754.prettylint.android.data.Location;
 
 import java.io.PrintStream;
 import java.util.List;
@@ -10,9 +12,29 @@ import java.util.List;
  */
 public class Writer {
 
+  private final TextAppearanceHelper textHelper = new TextAppearanceHelper();
+
   public void writeOutput(List<Issue> issues, PrintStream out) {
     for (Issue i : issues) {
-      out.println(i);
+      Location l = i.getLocation();
+      StringBuilder builder = new StringBuilder();
+      builder.append("[")
+          .append(textHelper.setColor(
+              i.getSeverity().toString(),
+              i.getSeverity().equals(Issue.Severity.ERROR) ? Color.RED : Color.YELLOW))
+          .append("] ")
+          .append(textHelper.setUnderline(i.getType()))
+          .append(": ")
+          .append(i.getMessage())
+          .append(System.lineSeparator())
+          .append("line ")
+          .append(l.getLine())
+          .append(", column ")
+          .append(l.getColumn())
+          .append(" of ")
+          .append(l.getFilePath())
+          .append(System.lineSeparator());
+      out.println(builder.toString());
     }
   }
 }

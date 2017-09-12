@@ -13,6 +13,6 @@ public class Main {
 
     Parser parser = new Parser();
     List<Issue> issues = parser.parseFile(new File(args[0]));
-    System.out.println(issues);
+    new Writer().writeOutput(issues, System.out);
   }
 }

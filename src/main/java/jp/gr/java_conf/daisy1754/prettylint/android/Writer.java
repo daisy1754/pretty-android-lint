@@ -1,6 +1,7 @@
 package jp.gr.java_conf.daisy1754.prettylint.android;
 
-import java.io.BufferedOutputStream;
+import jp.gr.java_conf.daisy1754.prettylint.android.data.Issue;
+
 import java.io.PrintStream;
 import java.util.List;
 

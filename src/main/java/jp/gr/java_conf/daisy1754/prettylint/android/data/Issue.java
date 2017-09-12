@@ -1,4 +1,4 @@
-package jp.gr.java_conf.daisy1754.prettylint.android;
+package jp.gr.java_conf.daisy1754.prettylint.android.data;
 
 /**
  * Represents entry in lint output, either warning or error.

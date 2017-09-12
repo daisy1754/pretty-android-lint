@@ -1,5 +1,7 @@
 package jp.gr.java_conf.daisy1754.prettylint.android;
 
+import jp.gr.java_conf.daisy1754.prettylint.android.data.Issue;
+
 import java.io.File;
 import java.util.List;
 

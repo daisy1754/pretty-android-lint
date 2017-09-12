@@ -1,5 +1,7 @@
 package jp.gr.java_conf.daisy1754.prettylint.android;
 
+import jp.gr.java_conf.daisy1754.prettylint.android.data.Issue;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

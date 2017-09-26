@@ -1,6 +1,8 @@
 # android-pretty-lint
 Simple tool to pretty print Android lint result.
 
+[![Build Status](https://travis-ci.org/daisy1754/pretty-android-lint.svg?branch=master)](https://travis-ci.org/daisy1754/pretty-android-lint)
+
 android-pretty-lint is a simple Java program that parses an output from Android lint and prints
 errors in console. This is written in Java so no additional environment setup is needed.
 

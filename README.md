@@ -5,12 +5,15 @@ android-pretty-lint is a simple Java program that parses an output from Android 
 errors in console. This is written in Java so no additional environment setup is needed.
 
 ## Setup with Travis CI
-Add below to your `.travis.yml`
+
+1. Copy pretty_android_lint.sh to your project
+2. Make it executable by 
+`chmod +x pretty_android_lint.sh`
+3. Modify your `.travis.yml`
 
 ```
 after_failure:
-  - git clone --depth 1 https://github.com/daisy1754/pretty-android-lint.git
-  - cd $TRAVIS_BUILD_DIR/pretty-android-lint; ./gradlew -q run -Dexec.args="$TRAVIS_BUILD_DIR/app/build/reports/lint-results.xml"
+  - ./pretty_android_lint 
 ```
 
 You'll now see lint error summary in travis log

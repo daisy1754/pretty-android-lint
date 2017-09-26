@@ -10,7 +10,7 @@ errors in console. This is written in Java so no additional environment setup is
 
 ## Setup with Travis CI
 
-1. Copy pretty_android_lint.sh to your project
+1. Copy [pretty_android_lint.sh](pretty_android_lint.sh) to your project
 2. Make it executable by 
 `chmod +x pretty_android_lint.sh`
 3. Modify your `.travis.yml`

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run pretty-android-lint tool to parse and this play the result of Android lint tool.
+# Run pretty-android-lint tool to parse and display the result of Android lint tool.
 
 # Only parse lint result if there is any result.
 if [ -f "$TRAVIS_BUILD_DIR/app/build/reports/lint-results.xml" ]; then
